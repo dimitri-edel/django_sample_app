@@ -8,19 +8,10 @@
 </head>
 <body>
     <h1>Add a Task</h1>
-    <form method="POST" action="/add">
-        <div>
-            <p>
-                <label for="item_name">Name</label>
-                <input type="text" id="item_name" name="item_name">
-            </p>
-        </div>>
-        <div>
-            <p>
-                <label for="item_done">Done</label>
-                <input type="checkbox" id="item_done" name="item_done">
-            </p>
-        </div>
+    <form method="POST" action="add">
+        {% csrf_token %}
+        {{ form }}
+        
         <div>
             <button type="submit">Add Item</button>
         </div>
